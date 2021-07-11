@@ -2,7 +2,8 @@ import React from 'react';
 import partnerimg from '../img/bluehost.png'
 import styled from 'styled-components';
 
-const Partner = () =>{
+const Partner = ({item}) =>{
+    console.log(item)
     return(
         <Partnerwrapper>
             <PartnerImg>

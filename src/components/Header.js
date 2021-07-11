@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../img/logo.png';
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
 
 
@@ -8,11 +9,12 @@ import styled from 'styled-components';
 const Header = () =>{
     return(
         <Navbar>
+            
             <Logo><img src = {logo} alt = 'logo'/></Logo>
             <NavLinks>
-                <li>Top 10 Web Hostings Services</li>
-                <li>Reviews</li>
-                <li>Articles</li>
+            <Link to="/"><li>Top 10 Web Hostings Services</li></Link>
+            <Link to="/review"><li>Reviews</li></Link>
+                <Link to = '/article'><li>Articles</li></Link>
                 <li>Contact Us</li>
                 <li>About Us</li>
             </NavLinks>
@@ -34,7 +36,8 @@ const NavLinks = styled.ul`
     list-style:none;
     display:flex;
     li{
-        margin-right:20px
+        margin-right:20px;
+        cursor:pointer;
     }
 `
 export default Header

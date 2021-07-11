@@ -3,15 +3,20 @@ import styled from 'styled-components';
 import Title from './Title';
 import Partner from './Partner';
 import Sidebar from './Sidebar';
+import useApi from '../hooks/useApi'
 const Main = () =>{
+    const datas = useApi('api');
     return(
         <Container>
             <Title/>
+            <MainSection>
             <Mainbody>
-                <Partner/>
-                <Sidebar/>
+                {datas.map((item)=>{
+                    return(<Partner data = {item} className='partner'/>)
+                })}
             </Mainbody>
-            
+            <Sidebar/>
+            </MainSection>
         </Container>
     )
 }
@@ -20,6 +25,10 @@ const Container = styled.div`
     padding : 0 calc(10vw + 5px);
 `
 const Mainbody = styled.div`
+    display:flex;
+    flex-direction:column;
+`
+const MainSection = styled.div`
     display:flex;
 `
 export default Main
