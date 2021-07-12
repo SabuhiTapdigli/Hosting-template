@@ -36,22 +36,69 @@ const Partnerwrapper = styled.div`
     justify-content:space-between;
     align-items:center;
     flex:0.8
+    height: 220px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 40px 0 rgba(0,0,0,0.12)
+    
 `
 const PartnerImg = styled.div `
-    width : 150px;
+    height: 38px;
+    width: 211px;
     img{
         width:100%;
+        object-fit:cover;
     }
 
 `
 const PartnerContent = styled.div`
+    width : 40%;
+    color: #2B292D;
+    h1{
+        padding:10px 0;
+        font-size: 19px;
+        font-weight: 900;
+    }
+    p{
+        padding: 5px 0;
+        font-size: 15px;
+        font-weight: 900;
+
+    }
 `
 
 const PartnerWhatwelike = styled.ul`
+    color: #2B292D;
+    li{
+        padding: 2px 0;
+        font-size: 14px;
+        font-weight: 300;
+    }
 `
-const PartnerRating = styled.div``
+const PartnerRating = styled.div`
+    width : 30%;
+`
 const ScoreText = styled.div``
-const ScoreValue = styled.div``
-const VisitButton = styled.button``
-const ReadReview = styled.div``
+const ScoreValue = styled.div`
+    padding:7px 0;
+`
+const VisitButton = styled.button`
+    height: 46px;
+    width: 207px;
+    border-radius: 3px;
+    background-color: #046EF1;
+    box-shadow: 0 3px 10px 0 rgba(182,182,182,0.5);
+    border:none;
+    outline:none;
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: 18px;
+    text-align: center;
+    color:white;
+}
+`
+const ReadReview = styled.div`
+    padding:5px 0;
+`
 export default Partner

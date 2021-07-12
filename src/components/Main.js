@@ -27,9 +27,13 @@ const Container = styled.div`
 const Mainbody = styled.div`
     display:flex;
     flex-direction:column;
-    flex:0.8
+    flex:0.78;
+    
 `
 const MainSection = styled.div`
     display:flex;
+    max-width:1200px;
+    margin:auto;
+    justify-content:space-between;
 `
 export default Main
