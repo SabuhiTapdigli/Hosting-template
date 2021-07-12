@@ -35,5 +35,6 @@ const MainSection = styled.div`
     max-width:1200px;
     margin:auto;
     justify-content:space-between;
+    padding: 0 20px;
 `
 export default Main

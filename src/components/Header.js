@@ -34,6 +34,7 @@ const Container =styled.div`
     justify-content:space-between;
     align-items:center;
     background-color:black;
+    padding: 0 20px;
 `
 const Logo = styled.div `
     img{

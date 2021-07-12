@@ -28,6 +28,7 @@ const BgWrapper = styled.div`
 const Container = styled.div`
     max-width:1200px;
     margin:auto;
+    padding: 0 20px;
 
     `
 const Currentime = styled.div`

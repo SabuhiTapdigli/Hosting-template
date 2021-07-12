@@ -1,10 +1,17 @@
-import React from 'react';
+import React,{useState} from 'react';
 import partnerimg from '../img/bluehost.png'
 import styled from 'styled-components';
 import eye from '../img/eye.svg'
 import banner from '../img/banner.png';
+import Toparticles from './Toparticles';
 
 const Sidebar = () =>{
+    const [article, setarticle] = useState([
+        {id:1,imgurl:'article1.png', text:'What Type of Hosting Do You Need?',name:'Article1'},
+        {id:2,imgurl:'article2.png', text:'What Type of Hosting Do You Need?',name:'Article2'},
+        {id:3,imgurl:'article3.png', text:'What Type of Hosting Do You Need?',name:'Article3'},
+        {id:4,imgurl:'article4.png', text:'What Type of Hosting Do You Need?',name:'Article4'},
+    ])
     return(
         <SidebarContainer>
             <Sidebartop>
@@ -19,6 +26,13 @@ const Sidebar = () =>{
                 <Sidebarbutton>Visit Website</Sidebarbutton>
                 <p>Special Intro Offer And 30-Day Money-Back Guarantee</p>
             </Sidebarbottom>
+            <Allarticles>
+                <h3>Must Reads</h3>
+                {article.map((item)=>{
+                    return(<Toparticles key = {item.id} item = {item}/>)
+                })}
+            </Allarticles>
+            
         </SidebarContainer>
     )
 }
@@ -74,6 +88,7 @@ const Sidebarbottom = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
+    margin-bottom:10px;
     p{
         color: #000000;
         font-size: 15px;
@@ -119,5 +134,17 @@ const Sidebarbutton = styled.button`
     text-align: center;
     text-shadow: 0 2px 20px 0 rgba(94,94,94,0.5);
 `
-
+const Allarticles = styled.div`
+    h3{
+        padding: 25px 10px 10px 20px;
+        background-color: #F3F3F3;
+        color: #000000;
+        font-size: 18px;
+        font-weight: 900;
+        letter-spacing: 0;
+        line-height: 20px;
+    }
+    border: 1px solid rgba(2,23,34,0.08);
+    border-radius: 5px;
+`
 export default Sidebar

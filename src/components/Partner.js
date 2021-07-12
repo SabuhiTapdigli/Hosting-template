@@ -34,20 +34,26 @@ const Partner = ({item}) =>{
 const Partnerwrapper = styled.div`
     display:flex;
     justify-content:space-between;
-    align-items:center;
+    // align-items:center;
     flex:0.8
     height: 220px;
     border-radius: 8px;
     background-color: #FFFFFF;
-    box-shadow: 0 0 40px 0 rgba(0,0,0,0.12)
+    box-shadow: 0 0 40px 0 rgba(0,0,0,0.12);
+    padding: 15px 0;
     
 `
 const PartnerImg = styled.div `
     height: 38px;
     width: 211px;
+    margin: 10px;
     img{
         width:100%;
         object-fit:cover;
+    }
+    span{
+        margin-top: 55px;
+        display: block;
     }
 
 `
@@ -77,10 +83,20 @@ const PartnerWhatwelike = styled.ul`
 `
 const PartnerRating = styled.div`
     width : 30%;
+    text-align:center;
 `
-const ScoreText = styled.div``
+const ScoreText = styled.div`
+    border-radius: 4px;
+    background-color: #F4F4F4;
+    width: 146px;
+    text-align:center;
+    margin:auto
+`
 const ScoreValue = styled.div`
-    padding:7px 0;
+    span{
+        font-weight:bold;
+    }
+    padding:10px 0;
 `
 const VisitButton = styled.button`
     height: 46px;
