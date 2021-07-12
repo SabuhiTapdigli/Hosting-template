@@ -5,6 +5,7 @@ import Main from './components/Main'
 import Review from  './components/Review';
 import Article from './components/Article'
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import Footer from './components/Footer';
 const App = () =>{
     return(
         <Router>
@@ -21,6 +22,7 @@ const App = () =>{
                         <Main/>
                     </Route>
                 </Switch>
+                <Footer/>
             </div>
         </Router>
         

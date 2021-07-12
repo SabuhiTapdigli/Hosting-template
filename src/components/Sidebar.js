@@ -31,6 +31,7 @@ const Sidebar = () =>{
                 {article.map((item)=>{
                     return(<Toparticles key = {item.id} item = {item}/>)
                 })}
+                <span> See More </span> 
             </Allarticles>
             
         </SidebarContainer>
@@ -143,6 +144,17 @@ const Allarticles = styled.div`
         font-weight: 900;
         letter-spacing: 0;
         line-height: 20px;
+        
+    }
+    span{
+        padding: 25px 10px 25px 20px;
+        background-color: #F3F3F3;
+        color: #000000;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 20px;
+        display:block;
     }
     border: 1px solid rgba(2,23,34,0.08);
     border-radius: 5px;

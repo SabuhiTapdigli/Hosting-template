@@ -30,7 +30,7 @@ const Footertext = styled.div`
     padding-top:50px;
     font-size: 16px;
     letter-spacing: 0;
-    line-height: 24px;
+    line-height: 2.5;
 
 `
 export default Footercontent

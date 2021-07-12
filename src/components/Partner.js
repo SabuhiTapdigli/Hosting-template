@@ -41,6 +41,7 @@ const Partnerwrapper = styled.div`
     background-color: #FFFFFF;
     box-shadow: 0 0 40px 0 rgba(0,0,0,0.12);
     padding: 15px 0;
+    margin-bottom:15px;
     
 `
 const PartnerImg = styled.div `
