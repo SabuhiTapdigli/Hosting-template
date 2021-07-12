@@ -12,7 +12,7 @@ const Main = () =>{
             <MainSection>
             <Mainbody>
                 {datas.map((item)=>{
-                    return(<Partner data = {item} className='partner'/>)
+                    return(<Partner key = {item.id} item = {item} className='partner'/>)
                 })}
             </Mainbody>
             <Sidebar/>
@@ -21,12 +21,13 @@ const Main = () =>{
     )
 }
 const Container = styled.div`
-    height: calc( 100vh - 60px);
-    padding : 0 calc(10vw + 5px);
+    // height: calc( 100vh - 60px);
+    // padding : 0 calc(10vw + 5px);
 `
 const Mainbody = styled.div`
     display:flex;
     flex-direction:column;
+    flex:0.8
 `
 const MainSection = styled.div`
     display:flex;

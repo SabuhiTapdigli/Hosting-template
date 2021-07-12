@@ -11,12 +11,14 @@ const Partner = ({item}) =>{
                 <span> * * * * *</span>
             </PartnerImg>
             <PartnerContent>
-                <h1>Bluehost</h1>
-                <p>BlueHostExtremely fast & reliable hosting with plenty of advanced security add-ons</p>
+                <h1>{item.partnerName}</h1>
+                <p>{item.bonus}</p>
                 <PartnerWhatwelike>
-                    <li>Powers 2M+ websites worldwide</li>
-                    <li>Automatic WordPress installation</li>
-                    <li>Free domain & website migration</li>
+                    {item.whatwelike.map((i)=>{
+                        return(<li>{i.name}</li>)
+                    })}
+                    
+                    
                 </PartnerWhatwelike>
             </PartnerContent>
             <PartnerRating>
