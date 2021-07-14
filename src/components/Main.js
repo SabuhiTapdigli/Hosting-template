@@ -5,10 +5,11 @@ import Partner from './Partner';
 import Sidebar from './Sidebar';
 import Footercontent from './Footercontent'
 const Main = ({datas}) =>{
-    
+    const title = 'Top 10 Web Hosting Services';
+    const parag = 'Keep your website up and running with a hosting company that promise high uptime, quick load times,and simple setup'
     return(
         <Container>
-            <Title/>
+            <Title title = {title} parag = {parag}/>
             <MainSection>
                 <Mainbody>
                     {datas.items.map((item)=>{

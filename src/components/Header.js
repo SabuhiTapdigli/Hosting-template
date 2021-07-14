@@ -6,13 +6,13 @@ const Header = () =>{
     return(
         <Navbar>
             <Container>
-                <Logo><img src = {logo} alt = 'logo'/></Logo>
+                <Link to ='/'><Logo><img src = {logo} alt = 'logo'/></Logo></Link>
                 <NavLinks>
                 <Link to="/"><li>Top 10 Web Hostings Services</li></Link>
                 <Link to="/reviews"><li>Reviews</li></Link>
                 <Link to = '/articles'><li>Articles</li></Link>
-                    <li>Contact Us</li>
-                    <li>About Us</li>
+                 <Link to = '/contact-us'><li>Contact Us</li></Link>  
+                 <Link to = '/about-us'> <li>About Us</li></Link>  
                 </NavLinks>
             </Container>
         </Navbar>
@@ -31,6 +31,7 @@ const Container =styled.div`
     padding: 0 20px;
 `
 const Logo = styled.div `
+
     img{
         
     }

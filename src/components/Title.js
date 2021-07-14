@@ -2,16 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import bg from '../img/bg-home.png'
 
-const Title = () => {
+const Title = ({title,parag,Contact}) => {
     return (
             <BgWrapper>
                 <Container>
                     <Headerwrapper>
                         <Currentime><div><span>&</span>Last Updated 7 Jul, 2021</div></Currentime>
-                        <TitleHeader>Top 10 Web Hosting Services</TitleHeader>
-                        <TtileContent>Keep your website up and running with a hosting company that promise high uptime,
-                            quick load times,and simple setup</TtileContent>
-                        <CheckButton>Check</CheckButton>
+                        <TitleHeader>{title}</TitleHeader>
+                        <TtileContent>{parag}</TtileContent>
+                        {!Contact && <CheckButton>Check</CheckButton>}
                     </Headerwrapper>
                 </Container>
             </BgWrapper>

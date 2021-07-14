@@ -6,9 +6,12 @@ import Footercontent from './Footercontent';
 import {Link} from 'react-router-dom';
 const Article = ({datas}) =>{
     const imgUrl = 'https://techsites.net/ho01/assets/images/'
+    const isReview = true;
+    const artitle = 'Must Reads';
+    const arparag = 'Keep your website up and running with a hosting company that promise high uptime, quick load times,and simple setup'
     return (
         <Container>
-            <Title/>
+            <Title title = {artitle} parag = {arparag}/>
             <MainSection>
                 <Mainbody>
                     {datas.articles.map((item)=>{

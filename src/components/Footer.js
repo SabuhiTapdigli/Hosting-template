@@ -1,22 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import logo from '../img/logo.svg';
-
+import {Link} from  'react-router-dom'
 const Footer = () =>{
     return(
         <FooterSection>
             <Container>
                 <Logo>
-                    <img src = {logo} alt = 'Top 10 Web Hosting'/>
+                <Link to='/'><img src = {logo} alt = 'Top 10 Web Hosting'/></Link>
                     <span>All Right Reserved &#169; 2021</span>
                 </Logo>
                 <Footerwrapper>
                     <FooterLinks>
-                        <li>Top 10 Web Hostings Services</li>
-                        <li>Reviews</li>
-                        <li>Articles</li>
-                        <li>Contact Us</li>
-                        <li>About Us</li>
+                        <Link to='/'><li>Top 10 Web Hostings Services</li></Link>
+                        <Link to='/reviews'><li>Reviews</li></Link>
+                        <Link to='/articles'> <li>Articles</li> </Link>
+                        <Link to='/contact-us'><li>Contact Us</li></Link>
+                        <Link to='/about'><li>About Us</li></Link>
                     </FooterLinks>
                     <Description>
                     There are different types of hosting services that cater to the varying types of businesses. Some web hosting companies will build your entire website, while others will just give you the plot of land and the shovel and leave you to it. Depending on your business model and size, you’ll choose a hosting company based on the factors explained below.
@@ -62,6 +62,11 @@ const FooterLinks = styled.ul`
     list-style:none;
     display:flex;
     padding-top: 30px;
+    a{
+        text-decoration:none;
+        color:white;
+        cursor:pointer;
+    }
     li{
         font-size: 15px;
         font-weight: 300;

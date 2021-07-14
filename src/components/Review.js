@@ -9,9 +9,11 @@ import { Link } from "react-router-dom";
 
 const Review  = ({datas}) =>{
     const isReview = true;
+    const revtitle = 'Top 10 Web Hosting Reviews';
+    const revparag = 'Keep your website up and running with a hosting company that promise high uptime, quick load times,and simple setup'
     return(
         <Container>
-            <Title/>
+            <Title title = {revtitle} parag = {revparag}/>
             <MainSection>
                 <Mainbody>
                     {datas.items.map((item)=>{
