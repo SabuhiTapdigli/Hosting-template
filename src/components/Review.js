@@ -1,10 +1,9 @@
-import React,{useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Title from './Title';
 import Partner from './Partner';
 import Sidebar from './Sidebar';
 import Footercontent from './Footercontent'
-import { Link } from "react-router-dom";
 
 
 const Review  = ({datas}) =>{

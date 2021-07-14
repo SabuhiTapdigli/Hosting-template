@@ -1,6 +1,5 @@
-import React,{useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import useApi from '../hooks/useApi'
 import Title from './Title';
 import Sidebar from './Sidebar';
 import Partner from './Partner';

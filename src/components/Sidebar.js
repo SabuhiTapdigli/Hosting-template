@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 import partnerimg from '../img/bluehost.png'
 import styled from 'styled-components';
 import eye from '../img/eye.svg'
@@ -17,7 +17,7 @@ const Sidebar = ({articles}) =>{
                 </div>
             </Sidebartop>
             <Sidebarbottom>
-                <PartnerImg><img src ={partnerimg}/></PartnerImg>
+                <PartnerImg><img src ={partnerimg} alt={'bluehost'}/></PartnerImg>
                 <Sidebartext>The Best Web Hosting</Sidebartext>
                 <Sidebarbutton>Visit Website</Sidebarbutton>
                 <p>Special Intro Offer And 30-Day Money-Back Guarantee</p>

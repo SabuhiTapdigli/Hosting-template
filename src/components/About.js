@@ -1,10 +1,9 @@
-import React,{useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Title from './Title';
 
 
 const About  = () =>{
-    const isReview = true;
     const abtitle = 'About Us';
     const abparag = 'Keep your website up and running with a hosting company that promise high uptime, quick load times,and simple setup'
     return(

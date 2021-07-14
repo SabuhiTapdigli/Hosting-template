@@ -1,12 +1,13 @@
 import React from 'react';
-// import partnerimg from '../img/bluehost.png'
+import top from '../img/top.svg';
+import check from '../img/check.svg';
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
 const Partner = ({item,isReview}) =>{
     const imgUrl = 'https://techsites.net/ho01/assets/images/logos/'
     return(
-        <Partnerwrapper>
+        <Partnerwrapper >
             <PartnerImg className =  {isReview ? 'review' : null}>
                 <img src = {`${imgUrl}${item.imgUrl}`} alt = {item.partnerName}/>
                 {isReview ? null : <span> * * * * *</span>}
@@ -17,7 +18,7 @@ const Partner = ({item,isReview}) =>{
                 {isReview ? null : 
                 <PartnerWhatwelike>
                     {item.whatwelike.map((i)=>{
-                        return(<li>{i.name}</li>)
+                        return(<li><img src ={check}/>{i.name}</li>)
                     })}
                 </PartnerWhatwelike>
                 
@@ -27,7 +28,7 @@ const Partner = ({item,isReview}) =>{
             </PartnerContent>
             <PartnerRating className =  {isReview ? 'review' : null}>
                 {isReview ? null : 
-                <ScoreText><span>%</span>Exceptional</ScoreText>
+                <ScoreText><span><img src ={top} alt = {'top'}/></span>Exceptional</ScoreText>
                 }
                 {isReview ? null : 
                 <ScoreValue><span>4.7/5</span> user rating</ScoreValue>
@@ -77,7 +78,7 @@ const PartnerContent = styled.div`
         font-weight: 900;
     }
     p{
-        padding: 5px 0;
+        padding: 10px 0;
         font-size: 15px;
         font-weight: 900;
 
@@ -86,11 +87,16 @@ const PartnerContent = styled.div`
 
 const PartnerWhatwelike = styled.ul`
     color: #2B292D;
+    list-style:none;
     li{
         padding: 2px 0;
         font-size: 14px;
         font-weight: 300;
     }
+    img{
+        margin-right:10px;
+    }
+    
 `
 const PartnerRating = styled.div`
     width : 30%;
@@ -101,7 +107,13 @@ const ScoreText = styled.div`
     background-color: #F4F4F4;
     width: 146px;
     text-align:center;
-    margin:auto
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    span{
+        display:flex;
+        margin-right:7px;
+    }
 `
 const ScoreValue = styled.div`
     span{

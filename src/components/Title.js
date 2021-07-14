@@ -1,13 +1,18 @@
-import React from 'react'
-import styled from 'styled-components'
-import bg from '../img/bg-home.png'
+import React from 'react';
+import styled from 'styled-components';
+import bg from '../img/bg-home.png';
+import tick from '../img/tick.svg';
+
 
 const Title = ({title,parag,Contact}) => {
+    const today = new Date(),
+
+    date = today.getDate() + ' ' + today.toLocaleString('en-us', { month: 'short' }) + ', ' + today.getFullYear();
     return (
             <BgWrapper>
                 <Container>
                     <Headerwrapper>
-                        <Currentime><div><span>&</span>Last Updated 7 Jul, 2021</div></Currentime>
+                        <Currentime><div><span><img src = {tick} alt = {'tick'}/></span> Last Updated {date}</div></Currentime>
                         <TitleHeader>{title}</TitleHeader>
                         <TtileContent>{parag}</TtileContent>
                         {!Contact && <CheckButton>Check</CheckButton>}
@@ -43,6 +48,13 @@ const Currentime = styled.div`
         border-radius: 5px;
         background-color: rgba(255,255,255,0.1);
         padding:5px 0;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+    span{
+        display:flex;
+        margin-right:7px;
     }
     padding:20px 0;
    

@@ -25,7 +25,7 @@ const Contact  = () =>{
 
                     </Form>
                     <Concatimg>
-                        <img src = {concat} alt = 'contact-us-image'/>
+                        <img src = {concat} alt = {'contact-us'}/>
                     </Concatimg>
                 </Mainbody>
             </MainSection>
