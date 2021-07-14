@@ -1,6 +1,5 @@
 import React,{useState} from 'react';
 import styled from 'styled-components';
-import useApi from '../hooks/useApi'
 import Title from './Title';
 import Partner from './Partner';
 import Sidebar from './Sidebar';
@@ -27,8 +26,7 @@ const Review  = ({datas}) =>{
 }
 
 const Container = styled.div`
-    // height: calc( 100vh - 60px);
-    // padding : 0 calc(10vw + 5px);
+    
 `
 const Mainbody = styled.div`
     display:flex;

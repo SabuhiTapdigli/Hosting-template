@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import eye from '../img/eye.svg'
 import banner from '../img/banner.png';
 import Toparticles from './Toparticles';
-
+import {Link} from 'react-router-dom'
 const Sidebar = ({articles}) =>{
 
     
@@ -32,7 +32,7 @@ const Sidebar = ({articles}) =>{
                         )
                     }
                 })}
-                <span> See More </span> 
+                <span> <Link to={`/articles`}>See More</Link> </span> 
             </Allarticles>
             
         </SidebarContainer>

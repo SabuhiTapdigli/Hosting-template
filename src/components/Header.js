@@ -2,10 +2,6 @@ import React from 'react';
 import logo from '../img/webhostinglogo.svg';
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
-
-
-
-
 const Header = () =>{
     return(
         <Navbar>
@@ -14,7 +10,7 @@ const Header = () =>{
                 <NavLinks>
                 <Link to="/"><li>Top 10 Web Hostings Services</li></Link>
                 <Link to="/reviews"><li>Reviews</li></Link>
-                    <Link to = '/article'><li>Articles</li></Link>
+                <Link to = '/articles'><li>Articles</li></Link>
                     <li>Contact Us</li>
                     <li>About Us</li>
                 </NavLinks>

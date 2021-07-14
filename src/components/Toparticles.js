@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom'
 
 const Toparticles = ({item}) =>{
     const imgUrl = 'https://techsites.net/ho01/assets/images/'
@@ -12,7 +13,7 @@ const Toparticles = ({item}) =>{
                     </ArticleImg>
                     <AritcleContent>
                         <p>{item.name}</p>
-                        <a href='#'>Read More</a>
+                        <Link to = {`/article/${item.name}`}>Read More</Link>
                     </AritcleContent>
                 </ArticleWrapper>
             </Article>

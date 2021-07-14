@@ -3,8 +3,9 @@ import './style.css'
 import Header from './components/Header'
 import Main from './components/Main'
 import Review from  './components/Review';
-import Article from './components/Article'
-import Readreview from './components/Readreview'
+import Article from './components/Article';
+import Readreview from './components/Readreview';
+import ReadArticle from './components/ReadArticle';
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Footer from './components/Footer';
 import useApi from './hooks/useApi'
@@ -21,9 +22,13 @@ const App = () =>{
                     <Route path = "/reviews">
                         <Review datas={datas}/>
                     </Route>
-                    <Route path = '/article'>
-                        <Article/>
+                    <Route path = '/article/:name'>
+                        <ReadArticle datas = {datas}/>
                     </Route>
+                    <Route path = '/articles'>
+                        <Article datas = {datas}/>
+                    </Route>
+                    
                     <Route path = "/">
                         <Main datas = {datas}/>
                     </Route>
