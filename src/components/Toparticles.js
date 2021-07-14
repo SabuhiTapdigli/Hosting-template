@@ -2,15 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Toparticles = ({item}) =>{
+    const imgUrl = 'https://techsites.net/ho01/assets/images/'
     return(
         
             <Article>
                 <ArticleWrapper>
                     <ArticleImg>
-                        <img src = {`./img/${item.imgurl}`} alt = {item.name}/>
+                        <img src = {`${imgUrl}${item.imgUrl}`} alt = {item.name}/>
                     </ArticleImg>
                     <AritcleContent>
-                        <p>What Type of Hosting Do You Need?</p>
+                        <p>{item.name}</p>
                         <a href='#'>Read More</a>
                     </AritcleContent>
                 </ArticleWrapper>
@@ -37,6 +38,8 @@ const Article = styled.div`
 `
 const ArticleImg = styled.div`
     flex:0.5;
+    height: 92px;
+    width: 92px;
     img{
         width:100%;
         height:100%;

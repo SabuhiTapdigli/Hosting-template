@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../img/logo.svg';
+import logo from '../img/webhostinglogo.svg';
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
@@ -13,7 +13,7 @@ const Header = () =>{
                 <Logo><img src = {logo} alt = 'logo'/></Logo>
                 <NavLinks>
                 <Link to="/"><li>Top 10 Web Hostings Services</li></Link>
-                <Link to="/review"><li>Reviews</li></Link>
+                <Link to="/reviews"><li>Reviews</li></Link>
                     <Link to = '/article'><li>Articles</li></Link>
                     <li>Contact Us</li>
                     <li>About Us</li>
@@ -24,7 +24,6 @@ const Header = () =>{
 }
 
 const Navbar = styled.div `
-    background-color:black;
     
 `
 const Container =styled.div`
@@ -33,7 +32,6 @@ const Container =styled.div`
     display:flex;
     justify-content:space-between;
     align-items:center;
-    background-color:black;
     padding: 0 20px;
 `
 const Logo = styled.div `
@@ -46,7 +44,7 @@ const NavLinks = styled.ul`
     display:flex;
     li{
         margin-right:20px;
-        color:white;
+        color:black;
         cursor:pointer;
     }
     a{

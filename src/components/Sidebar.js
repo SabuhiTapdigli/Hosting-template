@@ -5,13 +5,9 @@ import eye from '../img/eye.svg'
 import banner from '../img/banner.png';
 import Toparticles from './Toparticles';
 
-const Sidebar = () =>{
-    const [article, setarticle] = useState([
-        {id:1,imgurl:'article1.png', text:'What Type of Hosting Do You Need?',name:'Article1'},
-        {id:2,imgurl:'article2.png', text:'What Type of Hosting Do You Need?',name:'Article2'},
-        {id:3,imgurl:'article3.png', text:'What Type of Hosting Do You Need?',name:'Article3'},
-        {id:4,imgurl:'article4.png', text:'What Type of Hosting Do You Need?',name:'Article4'},
-    ])
+const Sidebar = ({articles}) =>{
+
+    
     return(
         <SidebarContainer>
             <Sidebartop>
@@ -28,8 +24,13 @@ const Sidebar = () =>{
             </Sidebarbottom>
             <Allarticles>
                 <h3>Must Reads</h3>
-                {article.map((item)=>{
-                    return(<Toparticles key = {item.id} item = {item}/>)
+                {articles.map((item,index)=>{
+                    if (index<4){
+                        return(
+                            <Toparticles key = {item.id} item = {item}/>
+                            
+                        )
+                    }
                 })}
                 <span> See More </span> 
             </Allarticles>

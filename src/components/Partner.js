@@ -1,31 +1,40 @@
 import React from 'react';
-import partnerimg from '../img/bluehost.png'
+// import partnerimg from '../img/bluehost.png'
+import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
-const Partner = ({item}) =>{
-    console.log(item)
+const Partner = ({item,isReview}) =>{
+    const imgUrl = 'https://techsites.net/ho01/assets/images/logos/'
     return(
         <Partnerwrapper>
-            <PartnerImg>
-                <img src = {partnerimg}/>
-                <span> * * * * *</span>
+            <PartnerImg className =  {isReview ? 'review' : null}>
+                <img src = {`${imgUrl}${item.imgUrl}`} alt = {item.partnerName}/>
+                {isReview ? null : <span> * * * * *</span>}
             </PartnerImg>
-            <PartnerContent>
+            <PartnerContent >
                 <h1>{item.partnerName}</h1>
                 <p>{item.bonus}</p>
+                {isReview ? null : 
                 <PartnerWhatwelike>
                     {item.whatwelike.map((i)=>{
                         return(<li>{i.name}</li>)
                     })}
-                    
-                    
                 </PartnerWhatwelike>
+                
+                }
+                
+                
             </PartnerContent>
-            <PartnerRating>
+            <PartnerRating className =  {isReview ? 'review' : null}>
+                {isReview ? null : 
                 <ScoreText><span>%</span>Exceptional</ScoreText>
+                }
+                {isReview ? null : 
                 <ScoreValue><span>4.7/5</span> user rating</ScoreValue>
+                }
+                
                 <VisitButton>Visit Website</VisitButton>
-                <ReadReview><a hred='#'>Read Review</a></ReadReview>
+                <ReadReview><Link to={`/review/${item.partnerName}`}>Read Review</Link></ReadReview>
             </PartnerRating>
         </Partnerwrapper>
     )
@@ -50,6 +59,7 @@ const PartnerImg = styled.div `
     margin: 10px;
     img{
         width:100%;
+        height:100%;
         object-fit:cover;
     }
     span{

@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
 const Footercontent = () =>{
+    
     return(
         <Container>
             <Footertext>
@@ -31,6 +33,7 @@ const Footertext = styled.div`
     font-size: 16px;
     letter-spacing: 0;
     line-height: 2.5;
+    margin-bottom:85px;
 
 `
 export default Footercontent

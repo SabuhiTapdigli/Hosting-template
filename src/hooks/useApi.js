@@ -1,11 +1,11 @@
 import {useState,useEffect} from 'react';
 import axios from 'axios';
 const useApi = (params) => {
-    const [datas, setdatas] = useState([]);
+    const [datas, setdatas] = useState({items:[],articles:[]});
     useEffect(()=>{
-        axios.get(`https://techsites.net/keymat/${params}`)
+        axios.get(`https://techsites.net/ho01/${params}`)
         .then(res => {
-            setdatas(res.data.eko)
+            setdatas(res.data)
         })
     },[])
     return datas

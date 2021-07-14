@@ -1,19 +1,30 @@
-import React from 'react';
+import React,{useState} from 'react';
 import styled from 'styled-components';
+import useApi from '../hooks/useApi'
 import Title from './Title';
-import Partner from './Partner';
 import Sidebar from './Sidebar';
-import Footercontent from './Footercontent'
-const Main = ({datas}) =>{
-    
+import Partner from './Partner';
+import Footercontent from './Footercontent';
+import { useParams } from 'react-router-dom';
+
+
+const Review  = ({datas}) =>{
+
+    const {name} = useParams()
     return(
         <Container>
             <Title/>
             <MainSection>
                 <Mainbody>
                     {datas.items.map((item)=>{
-                        return(<Partner key = {item.id} item = {item} className='partner'/>)
-                    }) }
+                        if(item.partnerName === name){
+                            return(
+                                <div>
+                                    <Partner key = {item.id} item = {item} className='partner'/>
+                                    <div dangerouslySetInnerHTML={{__html: item.review,}}/>
+                                </div>)
+                        }
+                    })}
                 </Mainbody>
                 <Sidebar articles = {datas.articles}/>
             </MainSection>
@@ -21,6 +32,7 @@ const Main = ({datas}) =>{
         </Container>
     )
 }
+
 const Container = styled.div`
     // height: calc( 100vh - 60px);
     // padding : 0 calc(10vw + 5px);
@@ -40,6 +52,5 @@ const MainSection = styled.div`
     margin-top:-40px;
     border-bottom:1px solid rgba(2,23,34,0.08);
     padding-bottom:100px;
-
 `
-export default Main
+export default Review
