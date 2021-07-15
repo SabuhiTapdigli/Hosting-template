@@ -1,24 +1,26 @@
-import React from 'react';
+import React from 'react'
 import top from '../img/top.svg';
 import check from '../img/check.svg';
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
-
+import Star from './Star';
 const Partner = ({item,isReview}) =>{
     const imgUrl = 'https://techsites.net/ho01/assets/images/logos/'
     return(
         <Partnerwrapper >
-            <PartnerImg className =  {isReview ? 'review' : null}>
-                <img src = {`${imgUrl}${item.imgUrl}`} alt = {item.partnerName}/>
-                {isReview ? null : <span> * * * * *</span>}
-            </PartnerImg>
+                <Partnercol>
+                    <PartnerImg className =  {isReview ? 'review' : null}>
+                        <img src = {`${imgUrl}${item.imgUrl}`} alt = {item.partnerName}/>
+                    </PartnerImg>
+                    {isReview ? null : <Star/>}
+                </Partnercol>
             <PartnerContent >
                 <h1>{item.partnerName}</h1>
                 <p>{item.bonus}</p>
                 {isReview ? null : 
                 <PartnerWhatwelike>
                     {item.whatwelike.map((i)=>{
-                        return(<li><img src ={check}/>{i.name}</li>)
+                        return(<li><img src ={check} alt ={'check'}/>{i.name}</li>)
                     })}
                 </PartnerWhatwelike>
                 
@@ -34,12 +36,18 @@ const Partner = ({item,isReview}) =>{
                 <ScoreValue><span>4.7/5</span> user rating</ScoreValue>
                 }
                 
-                <VisitButton>Visit Website</VisitButton>
+                <a href = {`https://${item.url}`} target='_blank'><VisitButton> Visit Website</VisitButton></a>
                 <ReadReview><Link to={`/review/${item.partnerName}`}>Read Review</Link></ReadReview>
             </PartnerRating>
         </Partnerwrapper>
     )
 }
+const Partnercol = styled.div`
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    margin:10px;
+`
 
 const Partnerwrapper = styled.div`
     display:flex;
@@ -57,7 +65,7 @@ const Partnerwrapper = styled.div`
 const PartnerImg = styled.div `
     height: 38px;
     width: 211px;
-    margin: 10px;
+    // margin: 10px;
     img{
         width:100%;
         height:100%;
@@ -101,6 +109,7 @@ const PartnerWhatwelike = styled.ul`
 const PartnerRating = styled.div`
     width : 30%;
     text-align:center;
+    padding:10px;
 `
 const ScoreText = styled.div`
     border-radius: 4px;
@@ -135,9 +144,18 @@ const VisitButton = styled.button`
     line-height: 18px;
     text-align: center;
     color:white;
+    margin:10px 0;
 }
 `
 const ReadReview = styled.div`
     padding:5px 0;
+    a{
+        color: #000000;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 10px;
+        text-align: center;
+    }
 `
 export default Partner

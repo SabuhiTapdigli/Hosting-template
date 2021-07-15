@@ -15,7 +15,7 @@ const Title = ({title,parag,Contact}) => {
                         <Currentime><div><span><img src = {tick} alt = {'tick'}/></span> Last Updated {date}</div></Currentime>
                         <TitleHeader>{title}</TitleHeader>
                         <TtileContent>{parag}</TtileContent>
-                        {!Contact && <CheckButton>Check</CheckButton>}
+                        {!Contact && <CheckButton><a href='https://bluehost.com' target='_blank'>Check</a></CheckButton>}
                     </Headerwrapper>
                 </Container>
             </BgWrapper>
@@ -87,6 +87,10 @@ const CheckButton = styled.button`
     outline:none;
     border:none;
     cursor-pointer;
+    a{
+        text-decoration:none;
+        color:white;
+    }
 
 `
 const Headerwrapper = styled.div`

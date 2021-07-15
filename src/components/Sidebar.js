@@ -13,13 +13,13 @@ const Sidebar = ({articles}) =>{
             <Sidebartop>
                 <span>350,060 + </span>
                 <div>
-                <p>Visited website today</p> <span><img src = {eye}/></span>
+                <p>Visited website today</p> <span><img src = {eye} alt = {'eye'}/></span>
                 </div>
             </Sidebartop>
             <Sidebarbottom>
                 <PartnerImg><img src ={partnerimg} alt={'bluehost'}/></PartnerImg>
                 <Sidebartext>The Best Web Hosting</Sidebartext>
-                <Sidebarbutton>Visit Website</Sidebarbutton>
+                <Sidebarbutton><a href='bluehost.com'>Visit Website</a></Sidebarbutton>
                 <p>Special Intro Offer And 30-Day Money-Back Guarantee</p>
             </Sidebarbottom>
             <Allarticles>
@@ -135,6 +135,10 @@ const Sidebarbutton = styled.button`
     line-height: 18px;
     text-align: center;
     text-shadow: 0 2px 20px 0 rgba(94,94,94,0.5);
+    a{
+        text-decoration:none;
+        color:white;
+    }
 `
 const Allarticles = styled.div`
     h3{
