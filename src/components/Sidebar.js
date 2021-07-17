@@ -13,17 +13,17 @@ const Sidebar = ({articles}) =>{
             <Sidebartop>
                 <span>350,060 + </span>
                 <div>
-                <p>Visited website today</p> <span><img src = {eye} alt = {'eye'}/></span>
+                <p>Visited website today</p> <span><img src = {eye} alt = {'eye'} width="73" height="73"/></span>
                 </div>
             </Sidebartop>
             <Sidebarbottom>
-                <PartnerImg><img src ={partnerimg} alt={'bluehost'}/></PartnerImg>
+                <PartnerImg><img src ={partnerimg} alt={'bluehost'} height='38' width ='150'/></PartnerImg>
                 <Sidebartext>The Best Web Hosting</Sidebartext>
-                <Sidebarbutton><a href='bluehost.com'>Visit Website</a></Sidebarbutton>
+                <Sidebarbutton><a href='bluehost.com' target='_blank' rel="noopener">Visit Website</a></Sidebarbutton>
                 <p>Special Intro Offer And 30-Day Money-Back Guarantee</p>
             </Sidebarbottom>
             <Allarticles>
-                <h3>Must Reads</h3>
+                <h2>Must Reads</h2>
                 {articles.map((item,index)=>{
                     if (index<4){
                         return(
@@ -32,7 +32,7 @@ const Sidebar = ({articles}) =>{
                         )
                     }
                 })}
-                <span> <Link to={`/articles`}>See More</Link> </span> 
+                <span> <Link to={`/articles`}>See More about aritcles</Link> </span> 
             </Allarticles>
             
         </SidebarContainer>
@@ -44,6 +44,9 @@ const SidebarContainer = styled.div`
     flex:0.2;
     // justify-content:center;
     align-items:center;
+    @media(max-width:992px){
+        display:none
+    }
 `
 const Sidebartop = styled.div`
     border: 1px solid rgba(2,23,34,0.08);
@@ -116,6 +119,8 @@ const PartnerImg = styled.div`
     width : 150px;
         img{
             width:100%;
+            height:100%;
+            object-fit:cover;
         }
 `
 
@@ -141,7 +146,7 @@ const Sidebarbutton = styled.button`
     }
 `
 const Allarticles = styled.div`
-    h3{
+    h2{
         padding: 25px 10px 10px 20px;
         background-color: #F3F3F3;
         color: #000000;

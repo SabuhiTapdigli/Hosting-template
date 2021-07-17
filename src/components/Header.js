@@ -11,7 +11,7 @@ const Header = () =>{
     return(
       
             <Container>
-                <Link to ='/'><Logo><img src = {logo} alt = 'logo'/></Logo></Link>
+                <Link to ='/'><Logo><img src = {logo} alt = 'logo' height='64' width ='195'/></Logo></Link>
                 <Navbar Nav = {Nav}/>
                 <Burger setNav = {setNav} Nav={Nav}/>
             </Container>
@@ -29,7 +29,8 @@ const Container =styled.div`
     padding: 0 20px;
 `
 const Logo = styled.div `
-
+    height:64px;
+    width:195px;
     img{
         
     }

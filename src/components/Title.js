@@ -12,10 +12,10 @@ const Title = ({title,parag,Contact}) => {
             <BgWrapper>
                 <Container>
                     <Headerwrapper>
-                        <Currentime><div><span><img src = {tick} alt = {'tick'}/></span> Last Updated {date}</div></Currentime>
+                        <Currentime><div><span><img src = {tick} alt = {'tick'} height='16' width ='16'/></span> Last Updated {date}</div></Currentime>
                         <TitleHeader>{title}</TitleHeader>
                         <TtileContent>{parag}</TtileContent>
-                        {!Contact && <CheckButton><a href='https://bluehost.com' target='_blank'>Check</a></CheckButton>}
+                        {!Contact && <CheckButton><a href='https://bluehost.com' target='_blank' rel="noopener">Check</a></CheckButton>}
                     </Headerwrapper>
                 </Container>
             </BgWrapper>
@@ -65,7 +65,6 @@ const TitleHeader = styled.h1`
     font-size: 33px;
     font-weight: 900;
     letter-spacing: 0;
-    line-height: 18px;
     padding:30px 0;
 `
 const TtileContent = styled.p`
@@ -90,6 +89,9 @@ const CheckButton = styled.button`
     a{
         text-decoration:none;
         color:white;
+    }
+    @media(max-width:992px){
+        display:none
     }
 
 `

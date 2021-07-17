@@ -1,16 +1,18 @@
 import React from 'react'
 import top from '../img/top.svg';
 import check from '../img/check.svg';
-import { Link } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 import styled from 'styled-components';
 import Star from './Star';
+
 const Partner = ({item,isReview}) =>{
-    const imgUrl = 'https://techsites.net/ho01/assets/images/logos/'
+    const imgUrl = '../img/';
     return(
-        <Partnerwrapper >
+        <Partnerwrapper key = {item.id}>
                 <Partnercol>
                     <PartnerImg className =  {isReview ? 'review' : null}>
-                        <img src = {`${imgUrl}${item.imgUrl}`} alt = {item.partnerName}/>
+                        <img src = {`${imgUrl}${item.imgUrl}`} alt = {item.partnerName} height='38' width ='211'/>
+                        
                     </PartnerImg>
                     {isReview ? null : <Star/>}
                 </Partnercol>
@@ -20,7 +22,7 @@ const Partner = ({item,isReview}) =>{
                 {isReview ? null : 
                 <PartnerWhatwelike>
                     {item.whatwelike.map((i)=>{
-                        return(<li><img src ={check} alt ={'check'}/>{i.name}</li>)
+                        return(<li key={i.id}><img src ={check} alt ={'check'} width="12" height="12"/>{i.name}</li>)
                     })}
                 </PartnerWhatwelike>
                 
@@ -30,14 +32,14 @@ const Partner = ({item,isReview}) =>{
             </PartnerContent>
             <PartnerRating className =  {isReview ? 'review' : null}>
                 {isReview ? null : 
-                <ScoreText><span><img src ={top} alt = {'top'}/></span>Exceptional</ScoreText>
+                <ScoreText><span><img src ={top} alt = {'top'} width="13" height="13"/></span><span>Exceptional</span></ScoreText>
                 }
                 {isReview ? null : 
                 <ScoreValue><span>4.7/5</span> user rating</ScoreValue>
                 }
                 
-                <a href = {`https://${item.url}`} target='_blank'><VisitButton> Visit Website</VisitButton></a>
-                <ReadReview><Link to={`/review/${item.partnerName}`}>Read Review</Link></ReadReview>
+                <a href = {`https://${item.url}`} target='_blank' rel="noreferrer"><VisitButton> Visit Website</VisitButton></a>
+                <ReadReview><NavLink to={`/review/${item.partnerName}`}>Read Review</NavLink></ReadReview>
             </PartnerRating>
         </Partnerwrapper>
     )
@@ -104,12 +106,17 @@ const PartnerWhatwelike = styled.ul`
     img{
         margin-right:10px;
     }
+    @media(max-width:992px){
+        display:none;
+    }
     
 `
 const PartnerRating = styled.div`
     width : 30%;
     text-align:center;
     padding:10px;
+
+    
 `
 const ScoreText = styled.div`
     border-radius: 4px;
@@ -122,6 +129,10 @@ const ScoreText = styled.div`
     span{
         display:flex;
         margin-right:7px;
+        ustify-content: center;
+        align-items: center;
+        height:25px;
+}
     }
 `
 const ScoreValue = styled.div`

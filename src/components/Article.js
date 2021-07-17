@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Title from './Title';
 import Sidebar from './Sidebar';
 import Footercontent from './Footercontent';
-import {Link} from 'react-router-dom';
+import {Link,NavLink} from 'react-router-dom';
 const Article = ({datas}) =>{
     const imgUrl = 'https://techsites.net/ho01/assets/images/'
     const artitle = 'Must Reads';
@@ -23,7 +23,7 @@ const Article = ({datas}) =>{
                                     <h2>{item.name} </h2>
                                     <span>07 July, 2021</span>
                                     <p>{item.shortText.substring(0,50)}</p>
-                                    <div> <Link to = {`article/${item.name}`}> Read More </Link></div>
+                                    <div> <NavLink to = {`article/${item.name}`}> Read More {item.name} </NavLink></div>
                                 </Ariclecontent>
                             </Articles>
                         )

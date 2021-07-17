@@ -18,7 +18,7 @@ const ReadArticle  = ({datas}) =>{
                 {datas.articles.map((item)=>{
                         if(item.name === name){
                             return(
-                                <div>
+                                <div key={item.id}>
                                     <h1>{item.name}</h1>
                                     <span>07 July, 2021</span>
                                     <img src = {`${imgUrl}${item.imgUrl}`} alt = {item.name} />

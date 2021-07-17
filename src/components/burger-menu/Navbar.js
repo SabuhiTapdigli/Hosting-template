@@ -5,7 +5,7 @@ import { NavLink,Link} from "react-router-dom";
 const Navbar = ({Nav,BurgerHandlar}) =>{
     return(
         <NavLinks onClick ={BurgerHandlar} Nav={Nav}>
-            <Link to ='/' ><Logo><img src = {logo} alt = 'logo'/></Logo></Link>
+            <Link to ='/' ><Logo><img src = {logo} alt = 'logo' height='64' width ='195'/></Logo></Link>
             <NavLink to="/" exact><li>Top 10 Web Hostings Services</li></NavLink>
             <NavLink to="/reviews"><li>Reviews</li></NavLink>
             <NavLink to = '/articles'><li>Articles</li></NavLink>

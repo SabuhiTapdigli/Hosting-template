@@ -7,16 +7,16 @@ const Footer = () =>{
         <FooterSection>
             <Container>
                 <Logo>
-                <Link to='/'><img src = {logo} alt = 'Top 10 Web Hosting'/></Link>
+                <Link to='/'><img src = {logo} alt = 'Top 10 Web Hosting' height='64' width ='195'/></Link>
                     <span>All Right Reserved &#169; 2021</span>
                 </Logo>
                 <Footerwrapper>
                     <FooterLinks>
-                        <Link to='/'><li>Top 10 Web Hostings Services</li></Link>
-                        <Link to='/reviews'><li>Reviews</li></Link>
-                        <Link to='/articles'> <li>Articles</li> </Link>
-                        <Link to='/contact-us'><li>Contact Us</li></Link>
-                        <Link to='/about'><li>About Us</li></Link>
+                        <li><Link to='/'>Top 10 Web Hostings Services</Link></li>
+                        <li><Link to='/reviews'>Reviews</Link></li>
+                        <li><Link to='/articles'>Articles</Link></li>
+                        <li><Link to='/contact-us'>Contact Us</Link></li>
+                        <li><Link to='/about'>About Us</Link></li>
                     </FooterLinks>
                     <Description>
                     There are different types of hosting services that cater to the varying types of businesses. Some web hosting companies will build your entire website, while others will just give you the plot of land and the shovel and leave you to it. Depending on your business model and size, you’ll choose a hosting company based on the factors explained below.

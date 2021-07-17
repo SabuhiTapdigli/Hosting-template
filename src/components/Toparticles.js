@@ -13,7 +13,7 @@ const Toparticles = ({item}) =>{
                     </ArticleImg>
                     <AritcleContent>
                         <p>{item.name}</p>
-                        <Link to = {`/article/${item.name}`}>Read More</Link>
+                        <Link to = {`/article/${item.name}`}>Read More {item.name}</Link>
                     </AritcleContent>
                 </ArticleWrapper>
             </Article>
@@ -60,7 +60,7 @@ const AritcleContent = styled.div`
         line-height: 17px;
     }
     a{
-        color: #999999;
+        color: #031ee8;
         font-family: Avenir;
         font-size: 14px;
         letter-spacing: 0;

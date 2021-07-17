@@ -7,10 +7,10 @@ import Contact from './components/Contact';
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Footer from './components/Footer';
 import useApi from './hooks/useApi'
-
 import Review from  './components/Review';
 import Article from './components/Article';
 import About from './components/About';
+import ScrollTop from './components/ScrollTop'
 const Main = React.lazy(()=> import ('./components/Main'))
 const App = () =>{
     const datas = useApi('Api');
@@ -19,7 +19,7 @@ const App = () =>{
             <div>
                 <Header/>
                 <Switch>
-                    
+                    <ScrollTop>
                     <Route path = '/review/:name'>
                         <Readreview datas = {datas} />
                     </Route>
@@ -43,6 +43,7 @@ const App = () =>{
                         <Main datas = {datas}/>
                     </Route>
                     </React.Suspense>
+                    </ScrollTop>
                 </Switch>
                 <Footer/>
             </div>
