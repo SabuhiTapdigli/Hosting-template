@@ -1,7 +1,7 @@
 import React from 'react'
 import top from '../img/top.svg';
 import check from '../img/check.svg';
-import { Link,NavLink } from "react-router-dom";
+import {NavLink } from "react-router-dom";
 import styled from 'styled-components';
 import Star from './Star';
 
@@ -49,6 +49,12 @@ const Partnercol = styled.div`
     flex-direction:column;
     justify-content:space-between;
     margin:10px;
+    @media(max-width:992px){
+        justify-content:center;
+        align-items:center;
+        margin:0;
+    }
+
 `
 
 const Partnerwrapper = styled.div`
@@ -62,12 +68,14 @@ const Partnerwrapper = styled.div`
     box-shadow: 0 0 40px 0 rgba(0,0,0,0.12);
     padding: 15px 0;
     margin-bottom:15px;
+    @media(max-width:992px){
+        flex-direction:column;
+    }
     
 `
 const PartnerImg = styled.div `
     height: 38px;
     width: 211px;
-    // margin: 10px;
     img{
         width:100%;
         height:100%;
@@ -76,6 +84,9 @@ const PartnerImg = styled.div `
     span{
         margin-top: 55px;
         display: block;
+    }
+    @media(max-width:992px){
+        margin-bottom:10px;
     }
 
 `
@@ -92,6 +103,13 @@ const PartnerContent = styled.div`
         font-size: 15px;
         font-weight: 900;
 
+    }
+    @media(max-width:992px){
+        h1{
+            display:none;
+        }
+        width : 100%;
+        text-align:center;
     }
 `
 
@@ -115,6 +133,9 @@ const PartnerRating = styled.div`
     width : 30%;
     text-align:center;
     padding:10px;
+    @media(max-width:992px){
+        width:100%
+    }
 
     
 `
@@ -132,7 +153,12 @@ const ScoreText = styled.div`
         ustify-content: center;
         align-items: center;
         height:25px;
-}
+        }
+    @media(max-width:992px){
+        span{
+            display:none;
+            }
+        }
     }
 `
 const ScoreValue = styled.div`

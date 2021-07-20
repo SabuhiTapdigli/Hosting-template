@@ -53,6 +53,9 @@ const Form = styled.form`
     display:flex;
     flex-direction:column;
     width: 50%;
+    @media(max-width:992px){
+        width: 100%
+    }
 `
 const Label = styled.label`
     color: #000000;
@@ -103,6 +106,9 @@ const Concatimg = styled.div`
         width:100%;
         object-fit:cover;
     }
+    @media(max-width:992px){
+        display:none
+    }
 `
 
 const Container = styled.div`
@@ -126,6 +132,9 @@ const MainSection = styled.div`
     margin-top:-250px;
     border-bottom:1px solid rgba(2,23,34,0.08);
     padding-bottom:100px;
+    @media(max-width:992px){
+        margin-top:0px;
+    }
 `
 export default Contact
 

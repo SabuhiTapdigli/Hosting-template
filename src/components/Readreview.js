@@ -23,6 +23,7 @@ const Reviewreview  = ({datas}) =>{
                                     <div dangerouslySetInnerHTML={{__html: item.review,}}/>
                                 </div>)
                         }
+                        return(null)
                     })}
                 </Mainbody>
                 <Sidebar articles = {datas.articles}/>
@@ -40,6 +41,9 @@ const Mainbody = styled.div`
     display:flex;
     flex-direction:column;
     flex:0.78;
+    @media(max-width:992px){
+        flex:1; 
+    }
     
 `
 const MainSection = styled.div`
@@ -51,5 +55,8 @@ const MainSection = styled.div`
     margin-top:-40px;
     border-bottom:1px solid rgba(2,23,34,0.08);
     padding-bottom:100px;
+    @media(max-width:992px){
+        margin-top:20px;
+    }
 `
 export default Reviewreview

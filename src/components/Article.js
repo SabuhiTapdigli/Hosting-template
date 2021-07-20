@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Title from './Title';
 import Sidebar from './Sidebar';
 import Footercontent from './Footercontent';
-import {Link,NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 const Article = ({datas}) =>{
     const imgUrl = 'https://techsites.net/ho01/assets/images/'
     const artitle = 'Must Reads';
@@ -47,6 +47,12 @@ const Mainbody = styled.div`
     grid-gap:25px;
     flex:0.78;
     height:50%;
+    @media(max-width:992px){
+        flex:1; 
+    }
+    @media(max-width:992px){
+        grid-template-columns : repeat(1,minmax(0,1fr));
+    }
     
 `
 const MainSection = styled.div`
@@ -69,6 +75,11 @@ const Articles = styled.div`
     align-items:center;
     height:250px;
     padding:15px;
+    @media(max-width:992px){
+        display:flex;
+    }
+    
+    
 
 `
 const ArticleImg = styled.div`

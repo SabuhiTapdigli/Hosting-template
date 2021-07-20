@@ -7,7 +7,9 @@
 .review{
     align-self: center;
 }
-
+.footer-lists{
+    padding-left: 50px;
+}
 @media(max-width:992px){
     .active{
         background-color: #2E2241;

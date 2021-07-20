@@ -51,12 +51,20 @@ const Logo = styled.div`
         letter-spacing: 0;
         padding: 50px 0;
     }
+    @media(max-width:992px){
+        span{
+            padding: 20px 0;
+        }
+    }
 `
 const Footerwrapper = styled.div `
     display:flex;
     flex-direction:column;
     justify-content:space-between;
     flex: 0.7;
+    @media(max-width:992px){
+        display:none;
+    }
 `
 const FooterLinks = styled.ul`
     list-style:none;
@@ -75,6 +83,9 @@ const FooterLinks = styled.ul`
         text-align: right;
         margin-right:25px;
     }
+    @media(max-width:992px){
+        display:none;
+    }
 `
 const Description = styled.p`
     color: #9D9D9D;
@@ -83,6 +94,9 @@ const Description = styled.p`
     letter-spacing: 0;
     line-height: 19px;
     padding: 50px 0;
+    @media(max-width:992px){
+        display:none;
+    }
 `
 
 export default Footer

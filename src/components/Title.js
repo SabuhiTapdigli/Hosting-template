@@ -13,8 +13,11 @@ const Title = ({title,parag,Contact}) => {
                 <Container>
                     <Headerwrapper>
                         <Currentime><div><span><img src = {tick} alt = {'tick'} height='16' width ='16'/></span> Last Updated {date}</div></Currentime>
-                        <TitleHeader>{title}</TitleHeader>
-                        <TtileContent>{parag}</TtileContent>
+                        <TitleHeader>Top 10 Web Hosting Services of 2021</TitleHeader>
+                        <TtileContent>
+                            <div>Fast and secure web hosting services at the lowest price </div>
+                            <div>Easy setup and good uptime</div>
+</TtileContent>
                         {!Contact && <CheckButton><a href='https://bluehost.com' target='_blank' rel="noopener">Check</a></CheckButton>}
                     </Headerwrapper>
                 </Container>
@@ -26,6 +29,10 @@ const BgWrapper = styled.div`
     background-image: url(${bg});
     height:450px;
     background-size:cover;
+    @media(max-width:992px){
+        height: 180px;
+    }
+    
 `
 
 
@@ -66,6 +73,9 @@ const TitleHeader = styled.h1`
     font-weight: 900;
     letter-spacing: 0;
     padding:30px 0;
+    @media(max-width:992px){
+        font-size: 18px;
+    }
 `
 const TtileContent = styled.p`
     color: #FFFFFF;
@@ -75,6 +85,9 @@ const TtileContent = styled.p`
     letter-spacing: 0;
     line-height: 26px;
     padding: 20px 0;
+    @media(max-width:992px){
+        display:none
+    }
 `
 const CheckButton = styled.button`
     height: 46px;
@@ -97,6 +110,10 @@ const CheckButton = styled.button`
 `
 const Headerwrapper = styled.div`
     padding:20px 0;
-    width:50%
+    width:60%;
+    @media(max-width:992px){
+        width:100%
+    }
+
 `
 export default Title
