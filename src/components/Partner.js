@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import Star from './Star';
 
 const Partner = ({item,isReview}) =>{
-    const imgUrl = '../img/';
+    const imgUrl = 'https://techsites.net/ho01/assets/images/logos/';
     return(
         <Partnerwrapper key = {item.id}>
                 <Partnercol>

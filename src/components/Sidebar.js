@@ -31,6 +31,7 @@ const Sidebar = ({articles}) =>{
                             
                         )
                     }
+                    return(null)
                 })}
                 <span> <Link to={`/articles`}>See More about aritcles</Link> </span> 
             </Allarticles>

@@ -18,7 +18,7 @@ const Title = ({title,parag,Contact}) => {
                             <div>Fast and secure web hosting services at the lowest price </div>
                             <div>Easy setup and good uptime</div>
 </TtileContent>
-                        {!Contact && <CheckButton><a href='https://bluehost.com' target='_blank' rel="noopener">Check</a></CheckButton>}
+                        {!Contact && <CheckButton><a href='https://bluehost.com' target='_blank' rel="noreferrer">Check</a></CheckButton>}
                     </Headerwrapper>
                 </Container>
             </BgWrapper>
@@ -77,7 +77,7 @@ const TitleHeader = styled.h1`
         font-size: 18px;
     }
 `
-const TtileContent = styled.p`
+const TtileContent = styled.div`
     color: #FFFFFF;
     font-family: Avenir;
     font-size: 18px;
