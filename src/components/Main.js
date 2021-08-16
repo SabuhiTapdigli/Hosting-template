@@ -5,18 +5,19 @@ import Partner from './Partner';
 import Sidebar from './Sidebar';
 import Footercontent from './Footercontent'
 const Main = ({datas}) =>{
-    const title = 'Top 10 Web Hosting Services';
+    const title = 'Top 10 Web Hosting Services of 2021';
     const parag = 'Keep your website up and running with a hosting company that promise high uptime, quick load times,and simple setup'
+    const firsturl = datas.items[0];
     return(
         <Container>
-            <Title title = {title} parag = {parag}/>
+            <Title title = {title} parag = {parag} firsturl={firsturl && firsturl.url}/>
             <MainSection>
                 <Mainbody>
                     {datas.items.map((item)=>{
                         return(<Partner key = {item.id} item = {item} className='partner'/>)
                     }) }
                 </Mainbody>
-                <Sidebar articles = {datas.articles}/>
+                <Sidebar articles = {datas.articles} firsturl={firsturl} />
             </MainSection>
             <Footercontent/>
         </Container>

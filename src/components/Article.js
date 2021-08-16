@@ -5,7 +5,7 @@ import Sidebar from './Sidebar';
 import Footercontent from './Footercontent';
 import {NavLink} from 'react-router-dom';
 const Article = ({datas}) =>{
-    const imgUrl = 'https://techsites.net/ho01/assets/images/'
+    const imgUrl = '../img/articles/'
     const artitle = 'Must Reads';
     const arparag = 'Keep your website up and running with a hosting company that promise high uptime, quick load times,and simple setup'
     return (

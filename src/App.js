@@ -12,6 +12,7 @@ const Contact = React.lazy(()=> import( './components/Contact'));
 const Review = React.lazy(()=> import(  './components/Review'));
 const Article = React.lazy(()=> import( './components/Article'));
 const About = React.lazy(()=> import( './components/About'));
+
 const App = () =>{
     const datas = useApi('Api');
     return(

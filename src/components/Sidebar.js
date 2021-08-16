@@ -1,13 +1,11 @@
 import React from 'react';
-import partnerimg from '../img/bluehost.png'
 import styled from 'styled-components';
 import eye from '../img/eye.svg'
 import banner from '../img/banner.png';
 import Toparticles from './Toparticles';
 import {Link} from 'react-router-dom'
-const Sidebar = ({articles}) =>{
-
-    
+const Sidebar = ({articles,firsturl}) =>{
+    const imgUrl = '../img/logos/';
     return(
         <SidebarContainer>
             <Sidebartop>
@@ -17,9 +15,9 @@ const Sidebar = ({articles}) =>{
                 </div>
             </Sidebartop>
             <Sidebarbottom>
-                <PartnerImg><img src ={partnerimg} alt={'bluehost'} height='38' width ='150'/></PartnerImg>
+                <PartnerImg><img src ={`${imgUrl}${firsturl && firsturl.imgUrl}`} alt={firsturl && firsturl.partnerName} height='38' width ='150'/></PartnerImg>
                 <Sidebartext>The Best Web Hosting</Sidebartext>
-                <Sidebarbutton><a href='bluehost.com' target='_blank' rel="noopener">Visit Website</a></Sidebarbutton>
+                <Sidebarbutton><a href={`https://${firsturl && firsturl.url}`} target='_blank' rel="noreferrer">Visit Website</a></Sidebarbutton>
                 <p>Special Intro Offer And 30-Day Money-Back Guarantee</p>
             </Sidebarbottom>
             <Allarticles>
@@ -141,6 +139,7 @@ const Sidebarbutton = styled.button`
     line-height: 18px;
     text-align: center;
     text-shadow: 0 2px 20px 0 rgba(94,94,94,0.5);
+    cursor:pointer;
     a{
         text-decoration:none;
         color:white;

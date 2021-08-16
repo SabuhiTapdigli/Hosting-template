@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom'
 
 const Toparticles = ({item}) =>{
-    const imgUrl = 'https://techsites.net/ho01/assets/images/'
+    const imgUrl = '../img/articles/'
     return(
         
             <Article>

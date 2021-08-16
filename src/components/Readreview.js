@@ -20,7 +20,7 @@ const Reviewreview  = ({datas}) =>{
                             return(
                                 <div>
                                     <Partner key = {item.id} item = {item} className='partner'/>
-                                    <div dangerouslySetInnerHTML={{__html: item.review,}}/>
+                                    <div dangerouslySetInnerHTML={{__html: item.review}}/>
                                 </div>)
                         }
                         return(null)
@@ -41,6 +41,8 @@ const Mainbody = styled.div`
     display:flex;
     flex-direction:column;
     flex:0.78;
+
+
     @media(max-width:992px){
         flex:1; 
     }

@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 
 
 const ReadArticle  = ({datas}) =>{
-    const imgUrl = 'https://techsites.net/ho01/assets/images/'
+    const imgUrl = '../img/articles/'
     const {name} = useParams();
     return(
         <Container>

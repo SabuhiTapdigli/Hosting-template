@@ -6,12 +6,12 @@ import styled from 'styled-components';
 import Star from './Star';
 
 const Partner = ({item,isReview}) =>{
-    const imgUrl = 'https://techsites.net/ho01/assets/images/logos/';
+    const imgUrl = '../img/logos/';
     return(
         <Partnerwrapper key = {item.id}>
                 <Partnercol>
                     <PartnerImg className =  {isReview ? 'review' : null}>
-                        <img src = {`${imgUrl}${item.imgUrl}`} alt = {item.partnerName} height='38' width ='211'/>
+                        <img src = {`${imgUrl}${item.imgUrl}`} alt = {item.partnerName} height='60' width ='210'/>
                         
                     </PartnerImg>
                     {isReview ? null : <Star/>}
@@ -35,7 +35,7 @@ const Partner = ({item,isReview}) =>{
                 <ScoreText><span><img src ={top} alt = {'top'} width="13" height="13"/></span><span>Exceptional</span></ScoreText>
                 }
                 {isReview ? null : 
-                <ScoreValue><span>4.7/5</span> user rating</ScoreValue>
+                <ScoreValue><span>{item.description}/5</span> user rating</ScoreValue>
                 }
                 
                 <a href = {`https://${item.url}`} target='_blank' rel="noreferrer"><VisitButton> Visit Website</VisitButton></a>
@@ -74,8 +74,8 @@ const Partnerwrapper = styled.div`
     
 `
 const PartnerImg = styled.div `
-    height: 38px;
-    width: 211px;
+    height: 60px;
+    width: 210px;
     img{
         width:100%;
         height:100%;
@@ -102,6 +102,7 @@ const PartnerContent = styled.div`
         padding: 10px 0;
         font-size: 15px;
         font-weight: 900;
+        color: #2B292D;
 
     }
     @media(max-width:992px){
@@ -133,6 +134,7 @@ const PartnerRating = styled.div`
     width : 30%;
     text-align:center;
     padding:10px;
+    
     @media(max-width:992px){
         width:100%
     }
@@ -182,6 +184,7 @@ const VisitButton = styled.button`
     text-align: center;
     color:white;
     margin:10px 0;
+    cursor:pointer;
 }
 `
 const ReadReview = styled.div`
