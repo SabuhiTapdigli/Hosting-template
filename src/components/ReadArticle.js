@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 
 
 const ReadArticle  = ({datas}) =>{
-    const imgUrl = '../img/articles/'
+    // const imgUrl = '../img/articles/'
     const {name} = useParams();
     return(
         <Container>
@@ -21,7 +21,7 @@ const ReadArticle  = ({datas}) =>{
                                 <div key={item.id}>
                                     <h1>{item.name}</h1>
                                     <span>07 July, 2021</span>
-                                    <img src = {`${imgUrl}${item.imgUrl}`} alt = {item.name} />
+                                    {/* <img src = {`${imgUrl}${item.imgUrl}`} alt = {item.name} /> */}
                                     <div dangerouslySetInnerHTML={{__html: item.text}}/>
                                 </div>
                                 )

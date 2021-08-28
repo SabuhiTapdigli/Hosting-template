@@ -8,9 +8,10 @@ const Article = ({datas}) =>{
     const imgUrl = '../img/articles/'
     const artitle = 'Must Reads';
     const arparag = 'Keep your website up and running with a hosting company that promise high uptime, quick load times,and simple setup'
+    const firsturl = datas.items[0];
     return (
         <Container>
-            <Title title = {artitle} parag = {arparag}/>
+            <Title title = {artitle} parag = {arparag} firsturl={firsturl && firsturl.url}/>
             <MainSection>
                 <Mainbody>
                     {datas.articles.map((item)=>{

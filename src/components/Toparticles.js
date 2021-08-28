@@ -12,7 +12,7 @@ const Toparticles = ({item}) =>{
                         <img src = {`${imgUrl}${item.imgUrl}`} alt = {item.name}/>
                     </ArticleImg>
                     <AritcleContent>
-                        <p>{item.name}</p>
+                        {/* <p>{item.name}</p> */}
                         <Link to = {`/article/${item.name}`}>Read More {item.name}</Link>
                     </AritcleContent>
                 </ArticleWrapper>

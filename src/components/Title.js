@@ -18,7 +18,7 @@ const Title = ({title,parag,Contact,firsturl}) => {
                             <div>Fast and secure web hosting services at the lowest price </div>
                             <div>Easy setup and good uptime</div>
                         </TtileContent>
-                        {!Contact && <CheckButton><a href={`https://${firsturl}`} target='_blank' rel="noreferrer">Check</a></CheckButton>}
+                        {!Contact && <CheckButton href={`${firsturl}`} target='_blank' rel="noreferrer">Check</CheckButton>}
                     </Headerwrapper>
                 </Container>
             </BgWrapper>
@@ -89,8 +89,8 @@ const TtileContent = styled.div`
         display:none
     }
 `
-const CheckButton = styled.button`
-    height: 46px;
+const CheckButton = styled.a`
+    padding: 15px;
     width: 207px;
     border-radius: 3px;
     background: linear-gradient(267.34deg, #48E2E2 0%, #0A6BFF 99.92%);
@@ -98,14 +98,16 @@ const CheckButton = styled.button`
     color: #FFFFFF;
     outline:none;
     border:none;
-    cursor-pointer;
-    a{
-        text-decoration:none;
-        color:white;
-    }
+    cursor:pointer;
+    text-decoration:none;
+    color:white;
+    display:block;
+    text-align:center;
     @media(max-width:992px){
         display:none
     }
+
+
 
 `
 const Headerwrapper = styled.div`

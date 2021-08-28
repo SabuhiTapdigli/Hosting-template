@@ -10,9 +10,10 @@ const Review  = ({datas}) =>{
     const isReview = true;
     const revtitle = 'Top 10 Web Hosting Reviews of 2021';
     const revparag = 'Keep your website up and running with a hosting company that promise high uptime, quick load times,and simple setup'
+    const firsturl = datas.items[0];
     return(
         <Container>
-            <Title title = {revtitle} parag = {revparag}/>
+            <Title title = {revtitle} parag = {revparag} firsturl={firsturl && firsturl.url}/>
             <MainSection>
                 <Mainbody>
                     {datas.items.map((item)=>{
