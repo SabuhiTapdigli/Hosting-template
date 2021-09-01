@@ -72,7 +72,7 @@ const TitleHeader = styled.h1`
     font-size: 33px;
     font-weight: 900;
     letter-spacing: 0;
-    padding:30px 0;
+    padding:10px 0;
     @media(max-width:992px){
         font-size: 18px;
     }
@@ -84,7 +84,8 @@ const TtileContent = styled.div`
     font-weight: 500;
     letter-spacing: 0;
     line-height: 26px;
-    padding: 20px 0;
+    padding-top:20px;
+    padding-bottom:60px;
     @media(max-width:992px){
         display:none
     }
@@ -103,6 +104,8 @@ const CheckButton = styled.a`
     color:white;
     display:block;
     text-align:center;
+    text-transform: uppercase;
+    font-weight: bold;
     @media(max-width:992px){
         display:none
     }

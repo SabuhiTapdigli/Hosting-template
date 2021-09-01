@@ -1,18 +1,25 @@
-import React from 'react'
-import Rating from '@material-ui/lab/Rating'
-import Box from '@material-ui/core/Box';
+import React from 'react';
+import Rating from '@material-ui/lab/Rating';
+import { makeStyles } from '@material-ui/core/styles';
 
-const Star = () => {
-    const value = 5;
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    '& > * + *': {
+      marginTop: theme.spacing(1),
+    },
+  },
+}));
+
+ const Star = ({rating}) =>{
+  const classes = useStyles();
 
   return (
-        <div>
-         <Box component="fieldset" mb={0} borderColor="transparent">
-             <Rating name="read-only" value={value} readOnly />
-        </Box>
-        </div>
-  )
-
-        }
-
+    <div className={classes.root}>
+      {/* <Rating name="half-rating" defaultValue={2.5} precision={0.5} /> */}
+      <Rating name="half-rating-read" defaultValue={rating} precision={0.5} readOnly />
+    </div>
+  );
+}
 export default Star

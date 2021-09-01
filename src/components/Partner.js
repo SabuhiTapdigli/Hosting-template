@@ -11,10 +11,10 @@ const Partner = ({item,isReview}) =>{
         <Partnerwrapper key = {item.id}>
                 <Partnercol>
                     <PartnerImg className =  {isReview ? 'review' : null}>
-                        <img src = {`${imgUrl}${item.imgUrl}`} alt = {item.partnerName} height='60' width ='210'/>
+                    <a href = {`${item.url}`} target='_blank' rel="noreferrer"> <img src = {`${imgUrl}${item.imgUrl}`} alt = {item.partnerName} height='60' width ='210'/></a>
                         
                     </PartnerImg>
-                    {isReview ? null : <Star/>}
+                    {isReview ? null : <Star rating = {parseFloat(item.description)}/>}
                 </Partnercol>
             <PartnerContent >
                 <h1>{item.partnerName}</h1>
@@ -32,10 +32,10 @@ const Partner = ({item,isReview}) =>{
             </PartnerContent>
             <PartnerRating className =  {isReview ? 'review' : null}>
                 {isReview ? null : 
-                <ScoreText><span><img src ={top} alt = {'top'} width="13" height="13"/></span><span>Exceptional</span></ScoreText>
+                <ScoreText><span><img src ={top} alt = {'top'} width="13" height="13"/></span><span>{item.short_review}</span></ScoreText>
                 }
                 {isReview ? null : 
-                <ScoreValue><span>{item.description}/5</span> user rating</ScoreValue>
+                <ScoreValue><span>{item.description}/5</span></ScoreValue>
                 }
                 
                 <a href = {`https://${item.url}`} target='_blank' rel="noreferrer"><VisitButton> Visit Website</VisitButton></a>
@@ -185,6 +185,7 @@ const VisitButton = styled.button`
     color:white;
     margin:10px 0;
     cursor:pointer;
+    text-transform:uppercase;
 }
 `
 const ReadReview = styled.div`

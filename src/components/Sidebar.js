@@ -14,7 +14,7 @@ const Sidebar = ({articles,firsturl}) =>{
                 <p>Visited website today</p> <span><img src = {eye} alt = {'eye'} width="73" height="73"/></span>
                 </div>
             </Sidebartop>
-            <Sidebarbottom>
+            <Sidebarbottom href={`${firsturl && firsturl.url}`} target='_blank' rel="noreferrer">
                 {/* <PartnerImg><img src ={`${imgUrl}${firsturl && firsturl.imgUrl}`} alt={firsturl && firsturl.partnerName} height='38' width ='150'/></PartnerImg> */}
                 {/* <Sidebartext>The Best Web Hosting</Sidebartext>
                 <Sidebarbutton><a href={`https://${firsturl && firsturl.url}`} target='_blank' rel="noreferrer">Visit Website</a></Sidebarbutton>
