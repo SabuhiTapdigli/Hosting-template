@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom';
 const ReadArticle  = ({datas}) =>{
     // const imgUrl = '../img/articles/'
     const {name} = useParams();
+    const firsturl = datas.items[0];
     return(
         <Container>
             <Title/>
@@ -29,7 +30,7 @@ const ReadArticle  = ({datas}) =>{
                         return(null);
                     })}
                 </Mainbody>
-                <Sidebar articles = {datas.articles}/>
+                <Sidebar articles = {datas.articles} firsturl={firsturl}/>
             </MainSection>
             <Footercontent/>
         </Container>

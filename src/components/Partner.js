@@ -4,14 +4,18 @@ import check from '../img/check.svg';
 import {NavLink } from "react-router-dom";
 import styled from 'styled-components';
 import Star from './Star';
+import useGaEventTracker from '../hooks/useGaEventTracker';
+
 
 const Partner = ({item,isReview}) =>{
     const imgUrl = '../img/logos/';
+    const gclid = sessionStorage.getItem('gclid')
+    const GaEventTracker = useGaEventTracker('Partner links')
     return(
         <Partnerwrapper key = {item.id}>
                 <Partnercol>
                     <PartnerImg className =  {isReview ? 'review' : null}>
-                    <a href = {`${item.url}`} target='_blank' rel="noreferrer"> <img src = {`${imgUrl}${item.imgUrl}`} alt = {item.partnerName} height='60' width ='210'/></a>
+                    <a href = {`${item.url}${gclid}`} target='_blank' rel="noreferrer" onClick={(e) =>GaEventTracker('Parter img clicked',`${item.url}${gclid}`)}> <img src = {`${imgUrl}${item.imgUrl}`} alt = {item.partnerName} height='60' width ='210'/></a>
                         
                     </PartnerImg>
                     {isReview ? null : <Star rating = {parseFloat(item.description)}/>}
@@ -38,7 +42,7 @@ const Partner = ({item,isReview}) =>{
                 <ScoreValue><span>{item.description}/5</span></ScoreValue>
                 }
                 
-                <a href = {`https://${item.url}`} target='_blank' rel="noreferrer"><VisitButton> Visit Website</VisitButton></a>
+                <a href = {`${item.url}${gclid}`} target='_blank' rel="noreferrer" onClick={(e) =>GaEventTracker('Visit website btn clicked',`${item.url}${gclid}`)}><VisitButton> Visit Website</VisitButton></a>
                 <ReadReview><NavLink to={`/review/${item.partnerName}`}>Read Review</NavLink></ReadReview>
             </PartnerRating>
         </Partnerwrapper>

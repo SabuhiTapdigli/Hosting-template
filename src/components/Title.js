@@ -2,12 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import bg from '../img/bg-home.png';
 import tick from '../img/tick.svg';
+import useGaEventTracker from '../hooks/useGaEventTracker';
+
 
 
 const Title = ({title,parag,Contact,firsturl}) => {
+    const GaEventTracker = useGaEventTracker('Title check button')
     const today = new Date(),
     date = today.getDate() + ' ' + today.toLocaleString('en-us', { month: 'short' }) + ', ' + today.getFullYear();
-    
+    const gclid = sessionStorage.getItem('gclid')
     return (
             <BgWrapper>
                 <Container>
@@ -18,7 +21,7 @@ const Title = ({title,parag,Contact,firsturl}) => {
                             <div>Fast and secure web hosting services at the lowest price </div>
                             <div>Easy setup and good uptime</div>
                         </TtileContent>
-                        {!Contact && <CheckButton href={`${firsturl}`} target='_blank' rel="noreferrer">Check</CheckButton>}
+                        {!Contact && <CheckButton href={`${firsturl}${gclid}`} target='_blank' rel="noreferrer" onClick={(e) =>GaEventTracker('Main page check btn clicked',`${firsturl}${gclid}`)}>Check</CheckButton>}
                     </Headerwrapper>
                 </Container>
             </BgWrapper>

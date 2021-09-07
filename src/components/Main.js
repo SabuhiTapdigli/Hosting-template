@@ -8,6 +8,7 @@ const Main = ({datas}) =>{
     const title = 'Top 10 Web Hosting Services of 2021';
     const parag = 'Keep your website up and running with a hosting company that promise high uptime, quick load times,and simple setup'
     const firsturl = datas.items[0];
+    
     return(
         <Container>
             <Title title = {title} parag = {parag} firsturl={firsturl && firsturl.url}/>

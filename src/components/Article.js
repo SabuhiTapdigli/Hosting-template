@@ -31,7 +31,7 @@ const Article = ({datas}) =>{
                     })}
                     
                 </Mainbody>
-                <Sidebar articles = {datas.articles}/>
+                <Sidebar articles = {datas.articles} firsturl={firsturl}/>
             </MainSection>
             <Footercontent/>
         </Container>

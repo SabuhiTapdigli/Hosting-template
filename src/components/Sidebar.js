@@ -4,8 +4,11 @@ import eye from '../img/eye.svg'
 import banner from '../img/kamatera.svg';
 import Toparticles from './Toparticles';
 import {Link} from 'react-router-dom'
+import useGaEventTracker from '../hooks/useGaEventTracker';
 const Sidebar = ({articles,firsturl}) =>{
     // const imgUrl = '../img/logos/';
+    const GaEventTracker = useGaEventTracker('Sidebar link')
+    const gclid = sessionStorage.getItem('gclid')
     return(
         <SidebarContainer>
             <Sidebartop>
@@ -14,7 +17,7 @@ const Sidebar = ({articles,firsturl}) =>{
                 <p>Visited website today</p> <span><img src = {eye} alt = {'eye'} width="73" height="73"/></span>
                 </div>
             </Sidebartop>
-            <Sidebarbottom href={`${firsturl && firsturl.url}`} target='_blank' rel="noreferrer">
+            <Sidebarbottom href={`${firsturl && firsturl.url}${gclid}`} target='_blank' rel="noreferrer" onClick={(e) =>GaEventTracker('Main page check btn clicked',`${firsturl.url}${gclid}`)}>
                 {/* <PartnerImg><img src ={`${imgUrl}${firsturl && firsturl.imgUrl}`} alt={firsturl && firsturl.partnerName} height='38' width ='150'/></PartnerImg> */}
                 {/* <Sidebartext>The Best Web Hosting</Sidebartext>
                 <Sidebarbutton><a href={`https://${firsturl && firsturl.url}`} target='_blank' rel="noreferrer">Visit Website</a></Sidebarbutton>

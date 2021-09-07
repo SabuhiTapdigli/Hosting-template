@@ -20,7 +20,7 @@ const Review  = ({datas}) =>{
                         return(<Partner key = {item.id} item = {item} isReview = {isReview} className='partner'/>)
                     })}
                 </Mainbody>
-                <Sidebar articles = {datas.articles}/>
+                <Sidebar articles = {datas.articles} firsturl={firsturl}/>
             </MainSection>
             <Footercontent/>
         </Container>

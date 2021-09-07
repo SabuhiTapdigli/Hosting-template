@@ -1,6 +1,6 @@
 {
   "name": "hosting",
-  "homepage":"https://top10-webhostings.com/",
+  "homepage": "https://top10-webhostings.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -13,6 +13,7 @@
     "axios": "^0.21.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-ga": "^3.3.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",

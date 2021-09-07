@@ -8,8 +8,9 @@ import { useParams } from 'react-router-dom';
 
 
 const Reviewreview  = ({datas}) =>{
-
+    const firsturl = datas.items[0];
     const {name} = useParams()
+   
     return(
         <Container>
             <Title/>
@@ -26,7 +27,7 @@ const Reviewreview  = ({datas}) =>{
                         return(null)
                     })}
                 </Mainbody>
-                <Sidebar articles = {datas.articles}/>
+                <Sidebar articles = {datas.articles} firsturl={firsturl}/>
             </MainSection>
             <Footercontent/>
         </Container>
