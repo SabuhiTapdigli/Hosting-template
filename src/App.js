@@ -27,6 +27,7 @@ const App = () =>{
     // Write into session storage
     sessionStorage.setItem('gclid',gclid)
     
+    
     return(
         <Router>
             <ScrollTop>
