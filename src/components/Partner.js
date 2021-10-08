@@ -9,13 +9,14 @@ import useGaEventTracker from '../hooks/useGaEventTracker';
 
 const Partner = ({item,isReview}) =>{
     const imgUrl = '../img/logos/';
-    // const gclid = sessionStorage.getItem('gclid')
+    const gclid = sessionStorage.getItem('gclid')
+    const itemurl = item.url+gclid
     const GaEventTracker = useGaEventTracker('Partner links')
     return(
         <Partnerwrapper key = {item.id}>
                 <Partnercol>
                     <PartnerImg className =  {isReview ? 'review' : null}>
-                    <a href = {`${item.url}`} target='_blank' rel="noreferrer" onClick={(e) =>GaEventTracker('Partner img clicked',item.partnerName)}> <img src = {`${imgUrl}${item.imgUrl}`} alt = {item.partnerName} height='60' width ='210'/></a>    
+                    <a href = {itemurl} target='_blank' rel="noreferrer" onClick={(e) =>GaEventTracker('Partner clicked',itemurl)}> <img src = {`${imgUrl}${item.imgUrl}`} alt = {item.partnerName} height='60' width ='210'/></a>    
                     </PartnerImg>
                     {isReview ? null : <Star rating = {parseFloat(item.description)}/>}
                 </Partnercol>
@@ -41,7 +42,7 @@ const Partner = ({item,isReview}) =>{
                 <ScoreValue><span>{item.description}/5</span></ScoreValue>
                 }
                 
-                <a href = {`${item.url}`} target='_blank' rel="noreferrer" onClick={(e) =>GaEventTracker('Visit btn clicked',`${item.partnerName}`)}><VisitButton> Visit Website</VisitButton></a>
+                <a href = {itemurl} target='_blank' rel="noreferrer" onClick={(e) =>GaEventTracker('Partner clicked',itemurl)}><VisitButton> Visit Website</VisitButton></a>
                 <ReadReview><NavLink to={`/review/${item.partnerName}`}>Read Review</NavLink></ReadReview>
             </PartnerRating>
         </Partnerwrapper>

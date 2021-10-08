@@ -6,7 +6,9 @@ import Footer from './components/Footer';
 import useApi from './hooks/useApi'
 import ScrollTop from './components/ScrollTop'
 import ReactGa from 'react-ga'
+import TagManager from 'react-gtm-module'
 const Main = React.lazy(()=> import ('./components/Main'))
+const DomainPage = React.lazy(()=> import ('./components/pages/DomainPage'))
 const Readreview  = React.lazy(()=> import( './components/Readreview'));
 const ReadArticle = React.lazy(()=> import( './components/ReadArticle'));
 const Contact = React.lazy(()=> import( './components/Contact'));
@@ -15,12 +17,19 @@ const Article = React.lazy(()=> import( './components/Article'));
 const About = React.lazy(()=> import( './components/About'));
 
 const App = () =>{
-    const datas = useApi('Api');
+    const datas = useApi('Api/partners/');
+    // Google Analytic
     useEffect(()=>{
         ReactGa.initialize('UA-121426505-5')
         // to report path view
         ReactGa.pageview(window.location.pathname + window.location.search)
     },[])
+    // Tag Manager
+    const tagManagerArgs = {
+        gtmId: 'GTM-TTF628B'
+    }
+    
+    TagManager.initialize(tagManagerArgs)
     // Take gclid id
     const queryParams = new URLSearchParams(window.location.search);
     const gclid = queryParams.get('gclid');
@@ -54,7 +63,9 @@ const App = () =>{
                     <Route path = '/contact-us'>
                         <Contact/>
                     </Route>
-                    
+                    <Route path = "/domain">
+                        <DomainPage/>
+                    </Route>
                     <Route path = "/">
                         <Main datas = {datas}/>
                     </Route>

@@ -129,7 +129,7 @@ const MainSection = styled.div`
     margin:auto;
     justify-content:space-between;
     padding: 70px;
-    margin-top:-250px;
+    margin-top:-170px;
     border-bottom:1px solid rgba(2,23,34,0.08);
     padding-bottom:100px;
     @media(max-width:992px){

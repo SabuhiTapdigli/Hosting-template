@@ -7,6 +7,7 @@ const Navbar = ({Nav,BurgerHandlar}) =>{
         <NavLinks onClick ={BurgerHandlar} Nav={Nav}>
             <Link to ='/' ><Logo><img src = {logo} alt = 'logo'/></Logo></Link>
             <NavLink to="/" exact><li>Top 10 Web Hostings Services</li></NavLink>
+            <NavLink to="/domain"><li>Domain</li></NavLink>
             <NavLink to="/reviews"><li>Reviews</li></NavLink>
             <NavLink to = '/articles'><li>Articles</li></NavLink>
             <NavLink to = '/contact-us'><li>Contact Us</li></NavLink>  
