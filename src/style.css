@@ -10,6 +10,18 @@
 .footer-lists{
     padding-left: 50px;
 }
+.banner {
+    background-image: url('./img/kamatera.svg');
+  }
+.banner.shared-hosting {
+    background-image: url('./img/bluehost.svg');
+}
+/* .banner.about {
+background: red
+}
+.banner.contact {
+background: yellow
+} */
 @media(max-width:992px){
     .active{
         background-color: #2E2241;

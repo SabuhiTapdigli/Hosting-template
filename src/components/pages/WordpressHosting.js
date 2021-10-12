@@ -5,9 +5,9 @@ import Partner from '../Partner';
 import Sidebar from '../Sidebar';
 import Footercontent from '../Footercontent'
 import useApi from '../../hooks/useApi'
-const DomainPage = () =>{
-    const datas = useApi('Api/domain/');
-    const title = 'Top 10 Domain Services of 2021';
+const WordpressHosting = () =>{
+    const datas = useApi('Api/Wordpress/');
+    const title = 'Top 10 Wordpress Hostings of 2021';
     const parag = 'Keep your website up and running with a hosting company that promise high uptime, quick load times,and simple setup'
     const firsturl = datas.items[0];
     
@@ -53,4 +53,4 @@ const MainSection = styled.div`
     }
 
 `
-export default DomainPage
+export default WordpressHosting

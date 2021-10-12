@@ -13,7 +13,7 @@ const Header = () =>{
       
             <Container>
                 <Link to ='/'><Logo><img src = {logo} alt = 'logo' height='64' width ='195'/></Logo></Link>
-                <Navbar Nav = {Nav}/>
+                <Navbar Nav = {Nav} setNav={setNav}/>
                 <Burger setNav = {setNav} Nav={Nav}/>
             </Container>
         

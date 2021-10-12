@@ -1,14 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 import eye from '../img/eye.svg'
-import banner from '../img/kamatera.svg';
+// import banner from '../img/kamatera.svg';
 import Toparticles from './Toparticles';
-import {Link} from 'react-router-dom'
+import {Link,useLocation} from 'react-router-dom'
 import useGaEventTracker from '../hooks/useGaEventTracker';
 const Sidebar = ({articles,firsturl}) =>{
     // const imgUrl = '../img/logos/';
     const GaEventTracker = useGaEventTracker('Sidebar link')
     const gclid = sessionStorage.getItem('gclid')
+    // for img
+    const path = useLocation().pathname;
+    const location = path.split("/")[1];
     return(
         <SidebarContainer>
             <Sidebartop>
@@ -17,11 +20,7 @@ const Sidebar = ({articles,firsturl}) =>{
                 <p>Visited website today</p> <span><img src = {eye} alt = {'eye'} width="73" height="73"/></span>
                 </div>
             </Sidebartop>
-            <Sidebarbottom href={`${firsturl && firsturl.url+gclid}`} target='_blank' rel="noreferrer" onClick={(e) =>GaEventTracker('Sidebar link clicked',firsturl.url+gclid)}>
-                {/* <PartnerImg><img src ={`${imgUrl}${firsturl && firsturl.imgUrl}`} alt={firsturl && firsturl.partnerName} height='38' width ='150'/></PartnerImg> */}
-                {/* <Sidebartext>The Best Web Hosting</Sidebartext>
-                <Sidebarbutton><a href={`https://${firsturl && firsturl.url}`} target='_blank' rel="noreferrer">Visit Website</a></Sidebarbutton>
-                <p>Special Intro Offer And 30-Day Money-Back Guarantee</p> */}
+            <Sidebarbottom className={"banner " + location} href={`${firsturl && firsturl.url+gclid}`} target='_blank' rel="noreferrer" onClick={(e) =>GaEventTracker('Sidebar link clicked',firsturl.url+gclid)}>
             </Sidebarbottom>
             <Allarticles>
                 <h2>Must Reads</h2>
@@ -91,7 +90,6 @@ border-radius: 5px;
 background-color: #F3F3F3;
 padding:30px 20px;
 width:100%;
-background-image : url(${banner});
 cursor:pointer;
 // background-size: cover;
 background-repeat: no-repeat;

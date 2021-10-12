@@ -8,7 +8,9 @@ import ScrollTop from './components/ScrollTop'
 import ReactGa from 'react-ga'
 import TagManager from 'react-gtm-module'
 const Main = React.lazy(()=> import ('./components/Main'))
-const DomainPage = React.lazy(()=> import ('./components/pages/DomainPage'))
+const SharedHosting = React.lazy(()=> import ('./components/pages/SharedHosting'))
+const Wordpress = React.lazy(()=> import ('./components/pages/WordpressHosting'))
+const VpsHosting = React.lazy(()=> import ('./components/pages/VpsHosting'))
 const Readreview  = React.lazy(()=> import( './components/Readreview'));
 const ReadArticle = React.lazy(()=> import( './components/ReadArticle'));
 const Contact = React.lazy(()=> import( './components/Contact'));
@@ -63,8 +65,14 @@ const App = () =>{
                     <Route path = '/contact-us'>
                         <Contact/>
                     </Route>
-                    <Route path = "/domain">
-                        <DomainPage/>
+                    <Route path = "/shared-hosting">
+                        <SharedHosting/>
+                    </Route>
+                    <Route path = "/wordpress-hosting">
+                        <Wordpress/>
+                    </Route>
+                    <Route path = "/Vps">
+                        <VpsHosting/>
                     </Route>
                     <Route path = "/">
                         <Main datas = {datas}/>
